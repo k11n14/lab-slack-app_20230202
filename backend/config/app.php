@@ -68,8 +68,9 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-
-    'timezone' => 'UTC',
+    // Laravel内で利用するCarbonライブラリのデフォルトタイムゾーンの設定
+    // 'timezone' => 'UTC',
+    'timezone' => 'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +82,9 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-
+    // 言語ファイルの切り替え。任意（変更するならresources/langのファイルも修正すべし）
+    // これは今回は変更しなくてOK
+    // 変更するなら'ja'とかにする
     'locale' => 'en',
 
     /*
@@ -107,8 +110,9 @@ return [
     | localized telephone numbers, street address information and more.
     |
     */
-
-    'faker_locale' => 'en_US',
+    // seederで利用するFackerの言語設定
+    // 'faker_locale' => 'en_US',
+    'faker_locale' => 'ja_JP',
 
     /*
     |--------------------------------------------------------------------------

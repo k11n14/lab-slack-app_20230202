@@ -15,7 +15,16 @@ return new class extends Migration
     {
         Schema::create('channels', function (Blueprint $table) {
             $table->id();
+            //追加
+            $table->index('uuid');
+            $table->string('name', 30);
+            //
+
             $table->timestamps();
+
+            //追加
+            $table->uuid('uuid')->unique();
+            //
         });
     }
 

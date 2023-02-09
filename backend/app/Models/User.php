@@ -18,9 +18,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        // 'name',
+        'nickname',
         'email',
         'password',
+        'icon_path',
     ];
 
     /**
@@ -41,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function channels()
+    {
+        return $this->belongsToMany(Channel::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }
